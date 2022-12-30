@@ -1,26 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Display} from "./Display";
+import {Buttons} from "./Buttons";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    const [count, setCount] = useState<number>(0)
+
+
+    const onClickAdd = () => {
+        if (count < 5) {
+            setCount(count + 1)
+        }
+    }
+
+    const onClickReset = () => {
+        setCount(0)
+    }
+
+
+    return (
+        <div className="App">
+            <Display count={count}/>
+            <Buttons onClickAdd={onClickAdd}
+                     onClickReset={onClickReset}
+            />
+        </div>
+    )
+
 }
 
 export default App;

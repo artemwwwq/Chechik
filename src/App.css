@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  background-color: #61dafb;
 }
 
 .App-logo {
@@ -35,4 +39,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.displayStyle {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 50px;
+  color: white;
+
+
+}
+
+.count {
+  margin: 50px auto;
+  width: 140px;
+  height: 150px;
+  border-radius: 50px;
+  font-size: 100px;
+
+  background-color: #282c34;
+
+}
+
+.buttonS {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.winnerCount {
+  background-color: gold;
+  margin: 50px auto;
+  width: 140px;
+  height: 150px;
+  border-radius: 50px;
+  font-size: 100px;
 }
