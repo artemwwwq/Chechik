@@ -7,7 +7,7 @@ export function Buttons(props: buttonPropsType) {
 
 
     return (
-        <div className='buttonS'>
+        <div className='But'>
             <button onClick={props.onClickAdd} >ADD</button>
             <button onClick={props.onClickReset}>RESET</button>
         </div>
