@@ -5,8 +5,12 @@ import Display from "./components/Display";
 import SettingDisplay from "./components/settingDisplay";
 
 
+
+
 function App() {
   const [count, setCount] = useState<number>(0)
+
+
 
   const onClickAdd = () => {
     if (count < 5) {
@@ -25,8 +29,10 @@ function App() {
   return (
     <div className="App">
       <SettingDisplay onClickSet={onClickSet}/>
-      <Display count={count} onClickAdd={onClickAdd}
-               onClickReset={onClickReset} />
+      <Display count={count}
+               onClickAdd={onClickAdd}
+               onClickReset={onClickReset}
+      />
     </div>
   );
 }

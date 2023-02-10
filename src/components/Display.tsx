@@ -8,13 +8,25 @@ type countType = {
 }
 
 const Display = (props: countType) => {
+
+    const addResetButton = (name: string) => {
+        if (name === 'ADD') {
+            props.onClickAdd()
+        } if (name === 'RESET') {
+            props.onClickReset()
+        }
+    }
+
+
+
     return (
         <div className='displayCount'>
             <div className='Tablo'>
                 <div className={props.count === 5 ? 'winnerCount' : 'count'}>{props.count}</div>
             </div>
             <div className='ButSolid'>
-                <Buttons onClickAdd={props.onClickAdd} onClickReset={props.onClickReset}/>
+                <Buttons name={'ADD'} callBack={addResetButton}></Buttons>
+                <Buttons name={'RESET'} callBack={addResetButton}></Buttons>
             </div>
         </div>
     );

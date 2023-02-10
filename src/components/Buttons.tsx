@@ -1,15 +1,20 @@
 type buttonPropsType = {
-    onClickAdd: () => void
-    onClickReset: () => void
+    name: string
+    callBack: (name: string)=>void
 }
+
+
+
 
 export function Buttons(props: buttonPropsType) {
 
+        const onClickHandler = () => {
+            props.callBack(props.name)
+        }
 
     return (
         <div className='But'>
-            <button onClick={props.onClickAdd} >ADD</button>
-            <button onClick={props.onClickReset}>RESET</button>
+            <button onClick={onClickHandler}>{props.name}</button>
         </div>
     )
 }
