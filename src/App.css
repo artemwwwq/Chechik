@@ -104,3 +104,18 @@ height: 40px;
   border: solid 5px cyan;
   text-align: center;
 }
+
+.disabled {
+
+  background-color: rebeccapurple;
+}
+
+.erorrInput {
+  width: 450px;
+  height: 250px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 20px;
+  border: solid 5px red;
+  background-color: red;
+}

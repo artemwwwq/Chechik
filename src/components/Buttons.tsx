@@ -1,6 +1,7 @@
 type buttonPropsType = {
     name: string
     callBack: (name: string)=>void
+    disabled: boolean
 }
 
 
@@ -12,9 +13,12 @@ export function Buttons(props: buttonPropsType) {
             props.callBack(props.name)
         }
 
+
+
+
     return (
         <div className='But'>
-            <button onClick={onClickHandler}>{props.name}</button>
+            <button disabled={props.disabled} onClick={onClickHandler}>{props.name}</button>
         </div>
     )
 }

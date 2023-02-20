@@ -5,9 +5,12 @@ type countType = {
     count: number
     onClickAdd: () => void
     onClickReset: () => void
+    maxValue: number
+    minValue: number
 }
 
 const Display = (props: countType) => {
+
 
     const addResetButton = (name: string) => {
         if (name === 'ADD') {
@@ -22,11 +25,11 @@ const Display = (props: countType) => {
     return (
         <div className='displayCount'>
             <div className='Tablo'>
-                <div className={props.count === 5 ? 'winnerCount' : 'count'}>{props.count}</div>
+                <div className={props.count === props.maxValue ? 'winnerCount' : 'count'}>{props.count}</div>
             </div>
             <div className='ButSolid'>
-                <Buttons name={'ADD'} callBack={addResetButton}></Buttons>
-                <Buttons name={'RESET'} callBack={addResetButton}></Buttons>
+                <Buttons name={'ADD'} callBack={addResetButton} disabled={props.count >= props.maxValue || props.count < 0 || props.minValue > props.maxValue}></Buttons>
+                <Buttons name={'RESET'} callBack={addResetButton} disabled={props.count === props.minValue || props.minValue < 0 || props.minValue > props.maxValue}></Buttons>
             </div>
         </div>
     );

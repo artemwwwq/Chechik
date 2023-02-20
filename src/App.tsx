@@ -10,28 +10,45 @@ import SettingDisplay from "./components/settingDisplay";
 function App() {
   const [count, setCount] = useState<number>(0)
 
+  const [maxValue, setMaxValue] = useState<number>(0)
+  const [minValue, setMinValue] = useState<number>(0)
+
+
 
 
   const onClickAdd = () => {
-    if (count < 5) {
+    if (count < maxValue) {
       setCount(count + 1)
     }
   }
 
   const onClickReset = () => {
-    setCount(0)
+    setCount(minValue)
   }
 
   const onClickSet = () => {
-
+      if (maxValue) {
+          setCount(minValue)
+      } else {
+          setMinValue(minValue)
   }
+  }
+
 
   return (
     <div className="App">
-      <SettingDisplay onClickSet={onClickSet}/>
+      <SettingDisplay onClickSet={onClickSet}
+                      maxValue={maxValue}
+                      setMaxValue={setMaxValue}
+                      minValue={minValue}
+                      setMinValue={setMinValue}
+                      count={count}
+      />
       <Display count={count}
                onClickAdd={onClickAdd}
                onClickReset={onClickReset}
+               maxValue={maxValue}
+               minValue={minValue}
       />
     </div>
   );
